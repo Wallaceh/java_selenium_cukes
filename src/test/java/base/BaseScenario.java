@@ -128,13 +128,6 @@ public class BaseScenario {
   }
 
   /**
-   * Get Site Url from pom.xml properties or command line -DsiteUrl
-   */
-  public String getSiteBaseUrl() {
-    return (String)System.getProperty("siteUrl");
-  }
-
-  /**
    * Close Driver: delete all cookies for new session, tearDownClass() will handle closing the driver
    */
   public static void closeDriver() {

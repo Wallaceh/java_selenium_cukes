@@ -43,22 +43,12 @@ import org.openqa.selenium.Point;
 import cucumber.api.java.en.Given;
 
 public class CommonStepDef extends BaseScenario {
-
-  /**
-   * Common Step to Open the site with device
-   * @throws Throwable
-   */
   @Given("^I visit Google.com$")
   public void the_web_site_page_type_is_opened_as() throws Throwable {
-
     WebDriver driver = getDriver();
-    String uri = "";
-
     driver.manage().window().setPosition(new Point(0, 0));
     driver.manage().window().setSize(new Dimension(1968, 1024));
-    driver.get(getSiteBaseUrl() + "/" + uri);
-
-    // Wait for Google search field to appear
+    driver.get("http://www.google.com");
     WebDriverWait wait = new WebDriverWait(driver, 200);
     wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("q")));
   }
