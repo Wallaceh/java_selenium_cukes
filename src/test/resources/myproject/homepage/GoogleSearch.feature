@@ -1,15 +1,10 @@
 @focus
-Feature: Demo of Searching Keyword (Cheese / Zeno in data table) in Google
+Feature: Demo of Searching Keyword cheese farts in Google
 As a site user
 If I search for keyword
 The page title should contains the keyword
 
-Scenario Outline:
-  Given The web site page type "<PageType>" is opened as "<ScreenSize>"
-  When I search "<Keyword>"
-  Then The page title should contains "<Keyword>"
-
- Examples:
-    | PageType | ScreenSize | Keyword|
-    | search | desktop | cheese|
-    | search | mobile | zeno yu|
+Scenario:
+  Given I visit Google.com
+  When I search "cheese farts"
+  Then The page title should contains "cheese farts"
